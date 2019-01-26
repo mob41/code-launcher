@@ -6,7 +6,7 @@ if (window.location.hash) {
 } else {
 	var t = new Date();
 	var k = btoa(t.getUTCFullYear() + "$!@--" + + navigator.userAgent + t.getUTCMonth() + navigator.appVersion + t.getUTCMonth() + navigator.platform + t.getUTCMonth() + navigator.vendor + "--@!$" + t.getUTCFullYear());
-	var m = sessionStorage.getItem(btoa(m));
+	var m = sessionStorage.getItem(btoa(k));
 	console.log("s: " + m);
 	if (m) {
 		__xm = atob(m);
