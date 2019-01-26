@@ -7,6 +7,7 @@ if (window.location.hash) {
 	var t = new Date();
 	var k = btoa(t.getUTCFullYear() + "$!@--" + + navigator.userAgent + t.getUTCMonth() + navigator.appVersion + t.getUTCMonth() + navigator.platform + t.getUTCMonth() + navigator.vendor + "--@!$" + t.getUTCFullYear());
 	var m = sessionStorage.getItem(btoa(m));
+	console.log("s: " + m);
 	if (m) {
 		__xm = atob(m);
 	} else {
@@ -34,6 +35,7 @@ if (__xm) {
 		});
 
 		var p = atob(__xm);
+		console.log(p);
 		var t = new Date();
 		var k = btoa(t.getUTCFullYear() + "$!@--" + + navigator.userAgent + t.getUTCMonth() + navigator.appVersion + t.getUTCMonth() + navigator.platform + t.getUTCMonth() + navigator.vendor + "--@!$" + t.getUTCFullYear());
 		sessionStorage.setItem(btoa(k), btoa(btoa(p)));
