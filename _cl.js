@@ -2,7 +2,7 @@ var __ss;
 var __ht;
 var __xm;
 if (window.location.hash && window.location.hash.startsWith("#p:")) {
-	__xm = btoa(window.location.hash.substring(4));
+	__xm = btoa(window.location.hash.substring(3));
 } else {
 	var t = new Date();
 	var k = btoa(t.getUTCFullYear() + "$!@--" + + navigator.userAgent + t.getUTCMonth() + navigator.appVersion + t.getUTCMonth() + navigator.platform + t.getUTCMonth() + navigator.vendor + "--@!$" + t.getUTCFullYear());
