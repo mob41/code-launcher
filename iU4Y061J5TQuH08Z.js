@@ -24,6 +24,7 @@ if (window.location.hash) {
 		req.addEventListener("load", function () {
 			var split = this.responseText.split("##########");
 			var json = JSON.parse(split[0]);
+			__ht = split[1];
 			__ss = json.scripts;
 			__ns();
 		});
