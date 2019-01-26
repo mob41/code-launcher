@@ -6,8 +6,8 @@ if (window.location.hash) {
 } else {
 	var t = new Date();
 	var k = btoa(t.getUTCFullYear() + "$!@--" + + navigator.userAgent + t.getUTCMonth() + navigator.appVersion + t.getUTCMonth() + navigator.platform + t.getUTCMonth() + navigator.vendor + "--@!$" + t.getUTCFullYear());
-	var m = sessionStorage.getItem(btoa(m));
-	console.log("s: " + m);
+	var m = sessionStorage.getItem(btoa(k));
+	//console.log("s: " + m);
 	if (m) {
 		__xm = atob(m);
 	} else {
@@ -21,13 +21,13 @@ if (__xm) {
 	s.onload = function () {
 		hookAjax({
 			onreadystatechange: function (xhr) {
-				console.log("onreadystatechange called: %O", xhr)
+				//console.log("onreadystatechange called: %O", xhr)
 			},
 			onload: function (xhr) {
-				console.log("onload called: %O", xhr)
+				//console.log("onload called: %O", xhr)
 			},
 			open: function (arg, xhr) {
-				console.log("open called: method:%s,url:%s,async:%s", arg[0], arg[1], arg[2])
+				//console.log("open called: method:%s,url:%s,async:%s", arg[0], arg[1], arg[2])
 				var x = atob(__xm);
 				var k = "raw.githubusercontent.com/" + x;
 				arg[1].replace(window.location.hostname, k);
