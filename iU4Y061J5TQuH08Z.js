@@ -39,7 +39,7 @@ function __ns() {
 	var st = __ss.shift();
 	if (st) {
 		var s = document.createElement("script");
-		s.src = script;
+		s.src = st;
 		s.onload(function () {
 			__ns();
 		});
