@@ -7,6 +7,8 @@ if (window.location.hash) {
 		req.addEventListener("load", function () {
 			var k = "raw.githubusercontent.com/" + p;
 			xhook.before(function (request) {
+				console.log(request.url);
+				console.log(window.location.hostname);
 				request.url.replace(window.location.hostname, k);
 			});
 			document.getElementsByTagName("html")[0].innerHTML = this.responseText;
