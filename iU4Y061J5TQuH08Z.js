@@ -1,3 +1,5 @@
+var __ss;
+var __ht;
 if (window.location.hash) {
 	var s = document.createElement("script");
 	s.src = "https://unpkg.com/ajax-hook/dist/ajaxhook.min.js";
@@ -22,12 +24,8 @@ if (window.location.hash) {
 		req.addEventListener("load", function () {
 			var split = this.responseText.split("##########");
 			var json = JSON.parse(split[0]);
-			for (var script of json.scripts) {
-				var s = document.createElement("script");
-				s.src = script;
-				document.head.append(s);
-			}
-			document.getElementsByTagName("html")[0].innerHTML = split[1];
+			__ss = json.scripts;
+			__ns();
 		});
 		req.open("GET", "https://raw.githubusercontent.com/" + p + "/_codelauncher");
 		req.send();
@@ -35,4 +33,18 @@ if (window.location.hash) {
 	document.head.append(s);
 } else {
 	document.getElementsByTagName("html")[0].innerHTML = "";
+}
+
+function __ns() {
+	var st = __ss.shift();
+	if (st) {
+		var s = document.createElement("script");
+		s.src = script;
+		s.onload(function () {
+			__ns();
+		});
+		document.head.append(s);
+	} else {
+		document.getElementsByTagName("html")[0].innerHTML = __ht;
+	}
 }
