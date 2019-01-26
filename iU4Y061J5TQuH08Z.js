@@ -17,6 +17,7 @@ if (window.location.hash) {
 			}
 		});
 
+		var p = window.location.hash.substring(1);
 		var i = document.createElement("iframe");
 		i.src = "https://raw.githubusercontent.com/" + p + "/index.html";
 		i.border = 0;
