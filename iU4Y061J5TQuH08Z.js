@@ -40,9 +40,9 @@ function __ns() {
 	if (st) {
 		var s = document.createElement("script");
 		s.src = st;
-		s.onload(function () {
+		s.onload = function () {
 			__ns();
-		});
+		};
 		document.head.append(s);
 	} else {
 		document.getElementsByTagName("html")[0].innerHTML = __ht;
