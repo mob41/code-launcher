@@ -22,7 +22,7 @@ if (window.location.hash) {
 		req.addEventListener("load", function () {
 			document.getElementsByTagName("html")[0].innerHTML = this.responseText;
 		});
-		req.open("GET", "https://raw.githubusercontent.com/" + p + "/.cl");
+		req.open("GET", "https://raw.githubusercontent.com/" + p + "/_codelauncher");
 		req.send();
 	};
 	document.head.append(s);
