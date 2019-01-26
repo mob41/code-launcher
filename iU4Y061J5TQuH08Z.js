@@ -18,10 +18,12 @@ if (window.location.hash) {
 		});
 
 		var p = window.location.hash.substring(1);
-		var i = document.createElement("iframe");
-		i.src = "https://raw.githubusercontent.com/" + p + "/index.html";
-		i.border = 0;
-		document.body.append(i);
+		var req = new XMLHttpRequest();
+		req.addEventListener("load", function () {
+			document.getElementsByTagName("html")[0].innerHTML = this.responseText;
+		});
+		req.open("GET", "https://raw.githubusercontent.com/" + p + "/.cl");
+		req.send();
 	};
 	document.head.append(s);
 } else {
