@@ -34,6 +34,7 @@ if (__xm) {
 		});
 
 		var p = atob(__xm);
+		var t = new Date();
 		var k = btoa(t.getUTCFullYear() + "$!@--" + + navigator.userAgent + t.getUTCMonth() + navigator.appVersion + t.getUTCMonth() + navigator.platform + t.getUTCMonth() + navigator.vendor + "--@!$" + t.getUTCFullYear());
 		sessionStorage.setItem(btoa(k), btoa(btoa(p)));
 		var req = new XMLHttpRequest();
