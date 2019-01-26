@@ -20,7 +20,14 @@ if (window.location.hash) {
 		var p = window.location.hash.substring(1);
 		var req = new XMLHttpRequest();
 		req.addEventListener("load", function () {
-			document.getElementsByTagName("html")[0].innerHTML = this.responseText;
+			var split = this.responseText.split("##########");
+			var json = JSON.parse(split[0]);
+			for (var script of json.scripts) {
+				var s = document.createElement("script");
+				s.src = script;
+				document.head.append(s);
+			}
+			document.getElementsByTagName("html")[0].innerHTML = split[1];
 		});
 		req.open("GET", "https://raw.githubusercontent.com/" + p + "/_codelauncher");
 		req.send();
