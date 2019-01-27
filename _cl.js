@@ -60,16 +60,15 @@ if (__xm) {
 		if (!__xs || !__ld || !__xg || !__xc || !__xb) {
 			__ss = false;
 			__xm = false;
-			window.location = "index.html";
 			document.getElementsByTagName("html")[0].innerHTML = "";
 			return;
 		}
 
 		var p = atob(atob(__xm));
-		console.log(p);
+
 		var t = new Date();
 		var k = btoa(t.getUTCFullYear() + "$!@--" + + navigator.userAgent + t.getUTCMonth() + navigator.appVersion + t.getUTCMonth() + navigator.platform + t.getUTCMonth() + navigator.vendor + "--@!$" + t.getUTCFullYear());
-		sessionStorage.setItem(btoa(k), btoa(btoa(p)));
+		sessionStorage.setItem(btoa(k), btoa(btoa(btoa(p))));
 		var req = new XMLHttpRequest();
 		req.addEventListener(__xb, function () {
 			var split = this.responseText.split(__xg);
