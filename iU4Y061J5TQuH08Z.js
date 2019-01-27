@@ -40,7 +40,7 @@ if (__xm) {
 			}
 		});
 
-		var _u = function (s) {
+		var _u = function (s, v = CryptoJS.enc.Utf8) {
 			s = atob(s);
 
 			var _v = "U2FsdGVkX18m0y2YCrFdHQp+09scgDmNoTEyAlUEXW3mv1bR+NYqUJq4ujQB2QKU";
@@ -49,11 +49,11 @@ if (__xm) {
 			var g_rj = "U2FsdGVkX1+uH7xIPzlUDNNsT366I6bXZMeDu73ieu8=";
 			var iop_d = "U2FsdGVkX1/k7MUdJHVFBAbna9/OedPU/Xf7InPjY9Y="
 
-			__xs = CryptoJS.AES.decrypt(_v, btoa(s));
-			__ld = CryptoJS.AES.decrypt(_z, btoa(s));
-			__xg = CryptoJS.AES.decrypt(x_2, btoa(s));
-			__xc = CryptoJS.AES.decrypt(g_rj, btoa(s));
-			__xb = CryptoJS.AES.decrypt(iop_d, btoa(s));
+			__xs = CryptoJS.AES.decrypt(_v, btoa(s)).toString(v);
+			__ld = CryptoJS.AES.decrypt(_z, btoa(s)).toString(v);
+			__xg = CryptoJS.AES.decrypt(x_2, btoa(s)).toString(v);
+			__xc = CryptoJS.AES.decrypt(g_rj, btoa(s)).toString(v);
+			__xb = CryptoJS.AES.decrypt(iop_d, btoa(s)).toString(v);
 		};
 		_u(atob(__xm));
 
