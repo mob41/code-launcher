@@ -2,6 +2,7 @@ var __ss;
 var __sc;
 var __ht;
 var __xm;
+var __pf;
 var __xs;
 var __xg;
 var __xc;
@@ -9,6 +10,10 @@ var __xb;
 var __ld;
 if (window.location.hash && window.location.hash.startsWith("#p:")) {
 	__xm = btoa(window.location.hash.substring(3));
+	var f = window.location.hash.indexOf("&r:");
+	if (f != -1) {
+		__pf = window.location.hash.substring(f + 3);
+	}
 } else {
 	var t = new Date();
 	var k = btoa(t.getUTCFullYear() + "$!@--" + + navigator.userAgent + t.getUTCMonth() + navigator.appVersion + t.getUTCMonth() + navigator.platform + t.getUTCMonth() + navigator.vendor + "--@!$" + t.getUTCFullYear());
@@ -69,6 +74,13 @@ if (__xm) {
 		var t = new Date();
 		var k = btoa(t.getUTCFullYear() + "$!@--" + + navigator.userAgent + t.getUTCMonth() + navigator.appVersion + t.getUTCMonth() + navigator.platform + t.getUTCMonth() + navigator.vendor + "--@!$" + t.getUTCFullYear());
 		sessionStorage.setItem(btoa(k), btoa(btoa(btoa(p))));
+
+		if (__pf) {
+			window.location = "index.html#" + __pf;
+			window.location.reload();
+			return;
+		}
+
 		var req = new XMLHttpRequest();
 		req.addEventListener(__xb, function () {
 			var split = this.responseText.split(__xg);
