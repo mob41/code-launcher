@@ -12,7 +12,6 @@ if (window.location.hash && window.location.hash.startsWith("#p:")) {
 	var f = window.location.hash.indexOf("&r:");
 	if (f != -1) {
 		__pf = window.location.hash.substring(f + 3);
-		console.log("pf: " + _pf);
 		__xm = btoa(window.location.hash.substring(3, f));
 	} else {
 		__xm = btoa(window.location.hash.substring(3));
@@ -80,7 +79,9 @@ if (__xm) {
 
 		if (__pf) {
 			window.location = "index.html#" + __pf;
-			window.location.reload();
+			window.onhashchange = function () {
+				window.location.reload();
+			};
 			return;
 		}
 
